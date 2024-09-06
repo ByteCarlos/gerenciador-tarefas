@@ -1,0 +1,29 @@
+main .list-tasks-container {
+    width: 80%;
+}
+
+main .list-tasks-container table td, main .list-tasks-container table th {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+main .list-tasks-container table td i {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+main .list-tasks-container table .actions-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+main .list-tasks-container table .actions-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .list-tasks-container table .actions-buttons .btn i {
+    margin-right: 5px;
+}

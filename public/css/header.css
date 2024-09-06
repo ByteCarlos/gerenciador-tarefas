@@ -1,0 +1,20 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+header .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header .header-actions-container {
+    display: inline-flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+}
