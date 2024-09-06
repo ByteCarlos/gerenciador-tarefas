@@ -13,8 +13,8 @@ header .title {
 }
 
 header .header-actions-container {
-    display: inline-flex;
+    display: flex;
     width: 80%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
