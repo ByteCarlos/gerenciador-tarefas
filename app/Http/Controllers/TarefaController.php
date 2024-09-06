@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tarefa;
 use Illuminate\Http\Request;
 
 class TarefaController extends Controller
@@ -10,8 +11,8 @@ class TarefaController extends Controller
     public function index()
     {   
 
-        // $tarefas = ???
+        $tarefas = Tarefa::all();
 
-        return view('tarefas.index'); // Liste as tarefas aqui
+        return view('tarefas.index', ["tarefas" => $tarefas]);
     }
 }
