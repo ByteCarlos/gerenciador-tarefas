@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Tarefa;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Livewire\Component;
 
@@ -10,15 +11,23 @@ class ListTasks extends Component
 {
     public $tarefas = [];
 
-    public $tarefa;
-
-    public function editTarefa($tarefaId)
+    public function editTarefa($tarefaId) : void
     {
-        // Carregue o modelo Tarefa com o ID fornecido
-        $this->tarefa = Tarefa::find($tarefaId);
+        $tarefa = Tarefa::find($tarefaId);
 
-        // Faça algo com o modelo, como abrir um modal para edição
-        $this->dispatch('editTarefa', $this->tarefa);
+        $this->dispatch('editTarefa', $tarefa);
+    }
+
+    public function concluirTarefa($tarefaId)
+    {
+        $tarefa = Tarefa::find($tarefaId);
+        $tarefa->status = "CONCLUIDA";
+
+        if($tarefa->save()) {
+            return redirect()->route('tarefas.index')->with('success', 'Tarefa concluída com sucesso.');
+        }else {
+            return redirect()->route('tarefas.index')->with('error', 'Ocorreu um erro ao concluir a tarefa.');
+        }
     }
 
     public function render() : View

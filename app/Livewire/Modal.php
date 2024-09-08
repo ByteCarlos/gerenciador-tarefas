@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 use Livewire\Attributes\On; 
 use App\Models\Tarefa;
@@ -96,12 +97,12 @@ class Modal extends Component
      * Valida os dados do formulário e decide se deve criar ou atualizar uma tarefa,
      * com base na presença de `$tarefaId`.
      *
-     * @return void
+     * @return RedirectResponse
      */
-    public function save(): void
+    public function save()
     {
         $this->validate();
-
+        $this->closeModal();
         if ($this->tarefaId) {
             // Atualiza a tarefa existente
             $tarefa = Tarefa::find($this->tarefaId);
@@ -109,6 +110,8 @@ class Modal extends Component
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
             ]);
+            $message = 'Tarefa criada com sucesso.';
+           
         } else {
             // Cria uma nova tarefa
             Tarefa::create([
@@ -116,10 +119,10 @@ class Modal extends Component
                 'descricao' => $this->descricao,
                 'status' => "PENDENTE",
             ]);
+            $message = 'Tarefa criada com sucesso.';
         }
 
-        $this->closeModal();
-        $this->dispatch('tarefaUpdated'); // Emite um evento para recarregar a lista de tarefas
+        return redirect()->route('tarefas.index')->with('success', $message);
     }
 
     /**
