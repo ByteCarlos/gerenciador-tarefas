@@ -11,4 +11,9 @@ class Header extends Component
     {
         return view('livewire.header');
     }
+
+    public function createEvent()
+    {
+        $this->dispatch('create-event');
+    }
 }

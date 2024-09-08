@@ -1,4 +1,5 @@
 <div class="list-tasks-container">
+    <livewire:modal />
     <table class="table table-striped table-bordered" id="list-tasks-table">
         <thead>
             <tr>
@@ -25,7 +26,7 @@
                         @endif
                     </td>
                     <td class="actions-buttons">
-                        <button class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Editar</button>
+                        <button wire:click="editTarefa({{ $tarefa->id }})" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Editar</button>
                         <button class="btn btn-danger"><i class="fa-solid fa-trash"></i>Excluir</button>
                     </td>
                 </tr>
