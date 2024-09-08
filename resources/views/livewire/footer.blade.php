@@ -1,3 +1,3 @@
-<div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
+<div class="container">
+    <p class="mb-0">&copy; {{ date('Y') }} ByteCarlos. Todos os direitos reservados.</p>
 </div>
