@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 use Livewire\Attributes\On; 
 use App\Models\Tarefa;
+use Illuminate\View\View;
 
 class Modal extends Component
 {
@@ -57,7 +58,7 @@ class Modal extends Component
      *
      * @return void
      */
-    public function resetFields(): void
+    public function resetFields()
     {
         $this->tarefaId = null;
         $this->titulo = '';
@@ -67,11 +68,11 @@ class Modal extends Component
     /**
      * Abre o modal para a criação de uma nova tarefa.
      * Limpa os campos do formulário e exibe o modal.
-     *
+     * @author ByteCarlos <carlos.hr.contato@gmail.com>
      * @return void
      */
-    #[On('create-event')] 
-    public function create(): void
+    #[On('create-event')]
+    public function create()
     {
         $this->resetFields();
         $this->openModal();
@@ -80,11 +81,11 @@ class Modal extends Component
     /**
      * Abre o modal para a edição de uma tarefa existente.
      * Preenche os campos do formulário com os dados da tarefa a ser editada.
-     *
-     * @param Tarefa $tarefa
+     * @author ByteCarlos <carlos.hr.contato@gmail.com>
+     * @param Tarefa $tarefa Tarefa a ser editada
      * @return void
      */
-    public function edit(Tarefa $tarefa): void
+    public function edit(Tarefa $tarefa)
     {
         $this->tarefaId = $tarefa->id;
         $this->titulo = $tarefa->titulo;
@@ -96,7 +97,7 @@ class Modal extends Component
      * Salva uma nova tarefa ou atualiza uma tarefa existente.
      * Valida os dados do formulário e decide se deve criar ou atualizar uma tarefa,
      * com base na presença de `$tarefaId`.
-     *
+     * @author ByteCarlos <carlos.hr.contato@gmail.com>
      * @return RedirectResponse
      */
     public function save()
@@ -110,7 +111,7 @@ class Modal extends Component
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
             ]);
-            $message = 'Tarefa criada com sucesso.';
+            $message = 'Tarefa atualizada com sucesso.';
            
         } else {
             // Cria uma nova tarefa
@@ -127,30 +128,30 @@ class Modal extends Component
 
     /**
      * Abre o modal definindo `$isOpen` como `true`.
-     *
+     * @author ByteCarlos <carlos.hr.contato@gmail.com>
      * @return void
      */
-    public function openModal(): void
+    public function openModal()
     {
         $this->isOpen = true;
     }
 
     /**
      * Fecha o modal definindo `$isOpen` como `false`.
-     *
+     * @author ByteCarlos <carlos.hr.contato@gmail.com>
      * @return void
      */
-    public function closeModal(): void
+    public function closeModal()
     {
         $this->isOpen = false;
     }
 
     /**
      * Renderiza o componente Livewire e retorna a view associada.
-     * 
-     * @return \Illuminate\View\View
+     *  @author ByteCarlos <carlos.hr.contato@gmail.com>
+     * @return View
      */
-    public function render(): \Illuminate\View\View
+    public function render()
     {
         return view('livewire.modal');
     }
