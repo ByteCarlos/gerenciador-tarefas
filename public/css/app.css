@@ -7,7 +7,7 @@ main {
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
+    height: auto;
 }
 
 main .title {

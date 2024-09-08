@@ -27,7 +27,7 @@
                     </td>
                     <td class="actions-buttons">
                         <button wire:click="editTarefa({{ $tarefa->id }})" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Editar</button>
-                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i>Excluir</button>
+                        <button  wire:click="excluirTarefa({{ $tarefa->id }})" class="btn btn-danger"><i class="fa-solid fa-trash"></i>Excluir</button>
                         <button wire:click="concluirTarefa({{ $tarefa->id }})" class="btn btn-success"><i class="fa-solid fa-check"></i>Concluir</button>
                     </td>
                 </tr>
