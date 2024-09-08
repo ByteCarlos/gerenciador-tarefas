@@ -21,10 +21,10 @@ class Header extends Component
     /**
      * Emite o evento de criação de evento
      * @author ByteCarlos <carlos.hr.contato@gmail.com>
-     * @return Event
+     * @return void
      */
     public function createEvent()
     {
-        return $this->dispatch('create-event');
+        $this->dispatch('create-event');
     }
 }

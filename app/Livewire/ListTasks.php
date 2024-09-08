@@ -16,13 +16,13 @@ class ListTasks extends Component
      * Emite o evento para abrir o modal para atualizar a tarefa
      * @author ByteCarlos <carlos.hr.contato@gmail.com>
      * @param $tarefaId ID da tarefa a ser atualizada
-     * @return Event
+     * @return void
      */
     public function editTarefa(int $tarefaId)
     {
         $tarefa = Tarefa::find($tarefaId);
 
-        return $this->dispatch('editTarefa', $tarefa);
+        $this->dispatch('editTarefa', $tarefa);
     }
 
     /**
