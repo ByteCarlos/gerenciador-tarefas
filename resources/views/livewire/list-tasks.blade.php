@@ -5,10 +5,11 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Criada em</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Título</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Status</th>
-                <th scope="col">Ações</th>
+                <th scope="col" class="th-actions">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,7 @@
                 <tr>
                     <th scope="row">{{$tarefa->id}}</td>
                     <td>{{$tarefa->created_at}}</td>
+                    <td>{{$tarefa->categoria->nome}}</td>
                     <td>{{$tarefa->titulo}}</td>
                     <td>{{$tarefa->descricao}}</td>
                     <td>
