@@ -23,3 +23,18 @@ main .list-tasks-container table .actions-buttons {
 main .list-tasks-container table .actions-buttons .btn i {
     margin-right: 5px;
 }
+
+main .list-tasks-container table .high-priority i {
+    margin-left: 5px;
+    color: #DC3545;
+}
+
+main .list-tasks-container table .medium-priority i {
+    margin-left: 5px;
+    color: #FFC107;
+}
+
+main .list-tasks-container table .low-priority i {
+    margin-left: 5px;
+    color: #218838;
+}

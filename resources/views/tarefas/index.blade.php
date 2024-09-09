@@ -21,7 +21,7 @@
     </header>
     <main>
         <livewire:alert />
-        <livewire:list-tasks :tarefas="$tarefas"/>
+        <livewire:list-tasks :tarefas="$tarefas" :categorias="$categorias"/>
     </main>
     <footer>
         <livewire:footer />

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Tarefa;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -12,9 +13,13 @@ class TarefaController extends Controller
     
     public function index() : View
     {   
-        $tarefas = Tarefa::all();
+        $tarefas = Tarefa::orderByRaw("
+            FIELD(prioridade, 'ALTA', 'MEDIA', 'BAIXA') ASC
+        ")->get();
 
-        return view('tarefas.index', compact('tarefas'));
+        $categorias = Categoria::all();
+
+        return view('tarefas.index', compact('tarefas', 'categorias'));
     }
 
     public function create() : View

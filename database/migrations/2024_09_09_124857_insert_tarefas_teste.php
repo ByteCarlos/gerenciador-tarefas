@@ -33,6 +33,15 @@ return new class extends Migration
                 'updated_at' => now(),
             ],
             [
+                'titulo' => 'Fazer teste para entrevista',
+                'descricao' => 'Revisar o conteúdo do laravel e livewire.',
+                'status' => 'PENDENTE',
+                'categoria_id' => $categoriaTrabalho->id,
+                'prioridade' => 'BAIXA',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'titulo' => 'Reunião com cliente',
                 'descricao' => 'Reunião de planejamento com o cliente XYZ.',
                 'status' => 'CONCLUIDA',

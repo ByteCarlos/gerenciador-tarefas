@@ -11,6 +11,7 @@ use Livewire\Component;
 class ListTasks extends Component
 {
     public $tarefas = [];
+    public $categorias = [];
 
     /**
      * Emite o evento para abrir o modal para atualizar a tarefa
@@ -67,7 +68,7 @@ class ListTasks extends Component
      */
     public function render()
     {
-        return view('livewire.list-tasks', ["tarefas" => $this->tarefas]);
+        return view('livewire.list-tasks', ["tarefas" => $this->tarefas, "categorias" => $this->categorias]);
     }
 
 
