@@ -14,6 +14,9 @@ class Modal extends Component
         'createEvent' => 'create',
         'editTarefa' => 'edit'
     ];
+
+    public $categorias = [];
+
     /**
      * Controla a visibilidade do modal.
      * 
@@ -43,6 +46,13 @@ class Modal extends Component
     public $descricao;
 
     /**
+     * Armazena o id da categoria da tarefa.
+     * 
+     * @var int
+     */
+    public $categoria_id;
+
+    /**
      * Regras de validação do formulário.
      * 
      * @var array
@@ -50,6 +60,7 @@ class Modal extends Component
     protected $rules = [
         'titulo' => 'required|string|max:100',
         'descricao' => 'required|string',
+        'categoria_id' => 'required',
     ];
 
     /**
@@ -63,6 +74,7 @@ class Modal extends Component
         $this->tarefaId = null;
         $this->titulo = '';
         $this->descricao = '';
+        $this->categoria_id = '';
     }
 
     /**
@@ -90,6 +102,7 @@ class Modal extends Component
         $this->tarefaId = $tarefa->id;
         $this->titulo = $tarefa->titulo;
         $this->descricao = $tarefa->descricao;
+        $this->categoria_id = $tarefa->categoria_id;
         $this->openModal();
     }
 
@@ -110,6 +123,7 @@ class Modal extends Component
             $tarefa->update([
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
+                'categoria_id' => $this->categoria_id,
             ]);
             $message = 'Tarefa atualizada com sucesso.';
            
@@ -118,7 +132,7 @@ class Modal extends Component
             Tarefa::create([
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
-                'status' => "PENDENTE",
+                'categoria_id' => $this->categoria_id,
             ]);
             $message = 'Tarefa criada com sucesso.';
         }
@@ -153,7 +167,7 @@ class Modal extends Component
      */
     public function render()
     {
-        return view('livewire.modal');
+        return view('livewire.modal', ["categorias" => $this->categorias]);
     }
 }
 

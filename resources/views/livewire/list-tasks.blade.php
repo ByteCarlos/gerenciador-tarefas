@@ -1,5 +1,5 @@
 <div class="list-tasks-container">
-    <livewire:modal />
+    <livewire:modal :categorias="$categorias" />
     <div class="container mt-0 mb-4" style="margin-left: 0">
         <div class="row">
             <div class="col-md-2">

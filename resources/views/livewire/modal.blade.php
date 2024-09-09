@@ -28,6 +28,16 @@
                                 <textarea id="descricao" wire:model="descricao" class="form-control"></textarea>
                                 @error('descricao') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
+
+                            <div class="form-group">
+                                <label for="categoria_id">Categoria</label>
+                                <select class="form-select" wire:model="categoria_id" id="categoria_id">
+                                    <option value="" disabled>Selecione uma categoria</option>
+                                    @foreach ($categorias as $categoria)
+                                        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">

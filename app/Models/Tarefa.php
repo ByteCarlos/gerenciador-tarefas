@@ -11,6 +11,7 @@ class Tarefa extends Model
     public $fillable = [
         "titulo",
         "descricao",
+        "categoria_id",
     ];
 
     use HasFactory;
