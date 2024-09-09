@@ -1,4 +1,9 @@
+footer {
+    margin-bottom: 50px;
+}
+
 .footer-logo {
-    height: 60px; /* Ajuste a altura das logos conforme necessário */
+    margin-top: 20px;
+    height: 80px; /* Ajuste a altura das logos conforme necessário */
     max-width: auto; /* Limita a largura máxima das logos */
 }

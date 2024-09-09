@@ -71,6 +71,23 @@ class Modal extends Component
     ];
 
     /**
+     * Mensagens de erro personalizadas para cada regra de validação.
+     * 
+     * @return array
+     */
+    protected function messages()
+    {
+        return [
+            'titulo.required' => 'O campo título é obrigatório.',
+            'titulo.string' => 'O título deve ser um texto válido.',
+            'titulo.max' => 'O título não pode ter mais de 100 caracteres.',
+            'descricao.required' => 'O campo descrição é obrigatório.',
+            'descricao.string' => 'A descrição deve ser um texto válido.',
+            'categoria_id.required' => 'Você deve selecionar uma categoria.',
+        ];
+    }
+
+    /**
      * Reseta os campos do formulário.
      * Limpa os valores das propriedades `$titulo`, `$descricao`, e `$tarefaId`.
      *

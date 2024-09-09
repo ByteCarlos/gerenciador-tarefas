@@ -18,29 +18,30 @@
                         <!-- Formulário -->
                         <form wire:submit.prevent="save">
                             <div class="form-group">
-                                <label for="titulo">Título</label>
+                                <label class="mb-2" for="titulo">Título</label>
                                 <input type="text" id="titulo" wire:model="titulo" class="form-control" />
                                 @error('titulo') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
 
-                            <div class="form-group">
-                                <label for="descricao">Descrição</label>
+                            <div class="form-group mt-2">
+                                <label class="mb-2" for="descricao">Descrição</label>
                                 <textarea id="descricao" wire:model="descricao" class="form-control"></textarea>
                                 @error('descricao') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
 
-                            <div class="form-group">
-                                <label for="categoria_id">Categoria</label>
+                            <div class="form-group mt-2">
+                                <label class="mb-2" for="categoria_id">Categoria</label>
                                 <select class="form-select" wire:model="categoria_id" id="categoria_id">
                                     <option value="" disabled selected>Selecione uma categoria</option>
                                     @foreach ($categorias as $categoria)
                                         <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
                                     @endforeach
                                 </select>
+                                @error('categoria_id') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
 
-                            <div class="form-group">
-                                <label for="prioridade">Prioridade</label>
+                            <div class="form-group mt-2">
+                                <label class="mb-2" for="prioridade">Prioridade</label>
                                 <select class="form-select" wire:model="prioridade" id="prioridade">
                                     <option value="" disabled selected>Selecione a prioridade</option>
                                     <option value="ALTA">ALTA</option>
