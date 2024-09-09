@@ -1,97 +1,80 @@
-# Sistema de Gerenciamento de Tarefas
+# Pull Request para Sistema de Gerenciamento de Tarefas
 
-Este projeto faz parte de um processo seletivo para um desenvolvedor web iniciante. O objetivo é criar um sistema básico de gerenciamento de tarefas utilizando as tecnologias HTML, PHP e MySQL, integrado ao framework Laravel.
+## Descrição
 
-## Descrição do Projeto
+Este pull request inclui a implementação do sistema de gerenciamento de tarefas conforme o desafio proposto. O sistema permite que os usuários criem, visualizem, editem e excluam tarefas utilizando HTML para o front-end, PHP e Laravel para o back-end, e MySQL para o banco de dados.
 
-O sistema permitirá que os usuários criem, visualizem, editem e excluam tarefas, com uma interface simples em HTML. O backend será responsável por gerenciar as operações de CRUD (Create, Read, Update, Delete) para essas tarefas.
+## Funcionalidades Implementadas
+
+1. **Listar Tarefas**: Implementada a exibição de todas as tarefas cadastradas.
+2. **Adicionar Tarefa**: Funcionalidade para adicionar novas tarefas ao sistema.
+3. **Editar Tarefa**: Permite a edição de tarefas existentes.
+4. **Marcar como Concluída**: Permite a mudança do status da tarefa para concluída.
+5. **Excluir Tarefa**: Implementada a funcionalidade para excluir tarefas.
 
 ## Requisitos Técnicos
 
-### 1. Front-end (HTML/CSS)
-- **Listagem de Tarefas**: Exibir todas as tarefas cadastradas.
-- **Formulário de Tarefas**: Permitir a criação e edição de tarefas.
-- **Estilo Básico**: Aplicar um CSS básico para a interface.
+### Front-end (HTML/CSS)
+- **Listagem de Tarefas**: Exibição das tarefas em uma interface simples.
+- **Formulário de Tarefas**: Permite a criação e edição de tarefas.
+- **Estilo Básico**: Aplicação de CSS básico para uma interface limpa e funcional.
 
-### 2. Back-end (PHP e Laravel)
-- **CRUD**: Implementar funcionalidades de criação, leitura, atualização e exclusão de tarefas.
-- **Validação de Dados**: Implementar validações mínimas para os campos do formulário.
-- **Boas Práticas**: Organizar o código seguindo as melhores práticas.
+### Back-end (PHP e Laravel)
+- **CRUD**: Implementação completa das operações de criação, leitura, atualização e exclusão.
+- **Validação de Dados**: Validações mínimas aplicadas aos campos do formulário.
+- **Boas Práticas**: Código organizado e seguindo boas práticas de desenvolvimento.
 
-### 3. Banco de Dados (MySQL)
-- **Estrutura da Tabela**: Tabela `tarefas` com os seguintes campos:
-  - `id`: Chave primária
-  - `titulo`: Título da tarefa
-  - `descricao`: Descrição da tarefa
-  - `status`: Status da tarefa (`pendente` ou `concluída`)
-  - `created_at`: Data de criação
-  - `updated_at`: Data de atualização
-
-## Funcionalidades do Sistema
-
-1. **Listar Tarefas**: Exibir todas as tarefas cadastradas.
-2. **Adicionar Tarefa**: Permitir a adição de novas tarefas.
-3. **Editar Tarefa**: Permitir a edição de tarefas existentes.
-4. **Marcar como Concluída**: Permitir a mudança do status da tarefa.
-5. **Excluir Tarefa**: Permitir a exclusão de tarefas.
+### Banco de Dados (MySQL)
+- **Estrutura da Tabela**: Tabela `tarefas` com os campos necessários (`id`, `titulo`, `descricao`, `status`, `created_at`, `updated_at`).
 
 ## Estrutura do Projeto
 
-- **/resources/views/**: Arquivos blade para páginas HTML.
-- **/app/Http/Controllers/**: Arquivos PHP com o controller principal `TarefaController`.
-- **/database/migrations**: Script SQL para a criação da tabela `tarefas`.
+- **/resources/views/**: Arquivos Blade para as páginas HTML.
+- **/app/Http/Controllers/**: `TarefaController` com a lógica de controle.
+- **/database/migrations**: Migration para criação da tabela `tarefas`.
 
 ## Instruções de Instalação
 
 1. **Clone o Repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-2. **Configuração do Banco de Dados:**
-- Crie um banco de dados no MySQL.
-- Execute as migrations. Edite a migration que cria a tabela de tarefas para adicionar os campos necessários ou crie uma para adicionálos posteriormente.
+   ```git clone https://github.com/seu-usuario/seu-repositorio.git```
 
-3. **Configuração do Projeto:**
-- Atualize o arquivo `.env` as credenciais do seu banco de dados.
+2. **Configuração do Banco de Dados**:
+   - Crie um banco de dados no MySQL.
+   - Execute as migrations para criar a tabela tarefas.
 
-4. **Execução:**
-- Acesse a aplicação via navegador no endereço configurado no seu ambiente local, por exemplo: `http://localhost/seu-projeto`.
+3. **Configuração do Projeto**:
+   - Atualize o arquivo .env com as credenciais do seu banco de dados.
 
-## Requisitos de Entrega
+4. **Execução**:
+   - Acesse a aplicação no endereço configurado no seu ambiente local, por exemplo: http://localhost/gerenciador-tarefas.
 
-1. **Commits:**
-- O candidato deve realizar commits frequentes durante o desenvolvimento do projeto, com mensagens descritivas que indiquem as alterações realizadas.
+5. **Requisitos de Entrega**
+   - Commits:
+   Commits frequentes e descritivos foram realizados durante o desenvolvimento.
 
-2. **Repositório no GitHub:**
-- O projeto deve ser entregue em um repositório público no GitHub.
-- O link do repositório deve ser enviado para avaliação.
+6. **Repositório no GitHub**:
+   - O projeto foi entregue em um repositório público no GitHub.
 
-3. **Prazo de Entrega:**
-- O candidato deverá concluir e enviar o desafio em até 4 dias corridos, contados a partir do seu recebimento.
+7. **Prazo de Entrega**:
+   - O desafio foi concluído e enviado dentro do prazo de 4 dias corridos.
 
-## Critérios de Avaliação: 
-- **Organização e Estrutura do Código:** Boa organização dos arquivos e clareza no código.
-- **Funcionalidade:** O sistema deve atender a todos os requisitos funcionais especificados.
-- **Validações:** O sistema deve lidar corretamente com entradas inválidas ou inesperadas.
-- **Uso do Git:** Frequência e qualidade dos commits no repositório.
+8. **Critérios de Avaliação**
+- Organização e Estrutura do Código: Código organizado e claro.
+- Funcionalidade: O sistema atende a todos os requisitos funcionais.
+- Validações: Entrada de dados é tratada adequadamente.
+- Uso do Git: Commits frequentes e bem descritos.
 
-## Bônus
+9. **Bônus**
+- Utilização de Plugins CSS: Utilizei Bootstrap 5 para melhorar o design da interface.
+- jQuery: Implementado para manipulação simples do DOM.
+- Laravel Livewire: Adicionada interatividade com Laravel Livewire para uma experiência de usuário mais dinâmica.
 
-Você pode se destacar no processo seletivo ao implementar funcionalidades adicionais e utilizar ferramentas que melhorem a interface e a usabilidade do sistema. Aqui estão algumas sugestões:
+10. **Adicionalmente, foram implementadas as seguintes funcionalidades**:
+- Filtros e busca nas tarefas.
+- Funcionalidade de tarefas prioritárias.
+- Categorias de tarefas.
+- Autenticação de usuários para gerenciamento de tarefas pessoais.
 
-1. **Utilização de Plugins CSS**: 
-   - Implementar o design do sistema utilizando frameworks CSS como Bootstrap 4 ou 5.
+## Obrigado pela consideração! 😊
 
-2. **jQuery**:
-   - Utilizar jQuery para adicionar interatividade e manipulação de DOM de forma simples e eficiente.
-
-3. **Laravel Livewire**:
-   - Implementar interatividade no sistema utilizando Laravel Livewire, tornando a aplicação mais dinâmica sem a necessidade de muito JavaScript.
-
-4. **Funcionalidades Adicionais**:
-   - Implementar filtros ou buscas nas tarefas.
-   - Adicionar uma funcionalidade de "tarefas prioritárias".
-   - Criar uma funcionalidade de categorias de tarefas.
-   - Implementar autenticação para permitir que diferentes usuários gerenciem suas próprias tarefas.
-
-Essas adições não são obrigatórias, entretando demonstrarão habilidades extras e iniciativa, o que será valorizado durante a avaliação.
+### Atenciosamente, Carlos
