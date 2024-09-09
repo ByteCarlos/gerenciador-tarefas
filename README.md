@@ -1,10 +1,8 @@
 # Sistema de Gerenciamento de Tarefas
 
-Este projeto faz parte de um processo seletivo para um desenvolvedor web iniciante. O objetivo é criar um sistema básico de gerenciamento de tarefas utilizando as tecnologias HTML, PHP e MySQL, integrado ao framework Laravel.
-
 ### Descrição
 
-Este pull request inclui a implementação do sistema de gerenciamento de tarefas conforme o desafio proposto. O sistema permite que os usuários criem, visualizem, editem e excluam tarefas utilizando HTML para o front-end, PHP e Laravel para o back-end, e MySQL para o banco de dados.
+Este projeto inclui a implementação do sistema de gerenciamento de tarefas conforme o desafio proposto. O sistema permite que os usuários criem, visualizem, editem e excluam tarefas utilizando HTML para o front-end, PHP e Laravel para o back-end, e MySQL para o banco de dados.
 
 ## Funcionalidades Implementadas
 
