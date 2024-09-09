@@ -4,7 +4,7 @@ Este projeto faz parte de um processo seletivo para um desenvolvedor web inician
 
 ## Descrição do Projeto
 
-O sistema permitirá que os usuários criem, visualizem, editem e excluam tarefas, com uma interface simples em HTML. O backend será responsável por gerenciar as operações de CRUD (Create, Read, Update, Delete) para essas tarefas.
+O sistema permite que os usuários criem, visualizem, editem e excluam tarefas, com uma interface simples em HTML. O backend é responsável por gerenciar as operações de CRUD (Create, Read, Update, Delete) para essas tarefas.
 
 ## Requisitos Técnicos
 
@@ -75,4 +75,4 @@ O sistema permitirá que os usuários criem, visualizem, editem e excluam tarefa
 ```bash
    php artisan serve
    ```
-- Acesse a aplicação via navegador no endereço configurado no seu ambiente local, por exemplo: `http://localhost/gerenciador-tarefas/`.
+- Acesse a aplicação via navegador no endereço configurado no seu ambiente local, por exemplo: http://localhost/gerenciador-tarefas/.
