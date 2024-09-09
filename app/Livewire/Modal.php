@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Attributes\On; 
 use App\Models\Tarefa;
@@ -14,6 +15,9 @@ class Modal extends Component
         'createEvent' => 'create',
         'editTarefa' => 'edit'
     ];
+
+    public $categorias = [];
+
     /**
      * Controla a visibilidade do modal.
      * 
@@ -43,6 +47,27 @@ class Modal extends Component
     public $descricao;
 
     /**
+     * Armazena o id da categoria da tarefa.
+     * 
+     * @var int
+     */
+    public $categoria_id;
+
+    /**
+     * Prioridade da tarefa ['ALTA', 'MEDIA', 'BAIXA'].
+     * 
+     * @var string
+     */
+    public $prioridade;
+
+    /**
+     * FK de usuário para tarefa.
+     * 
+     * @var int
+     */
+    public $user_id;
+
+    /**
      * Regras de validação do formulário.
      * 
      * @var array
@@ -50,7 +75,26 @@ class Modal extends Component
     protected $rules = [
         'titulo' => 'required|string|max:100',
         'descricao' => 'required|string',
+        'categoria_id' => 'required',
+        'user_id' => 'required',
     ];
+
+    /**
+     * Mensagens de erro personalizadas para cada regra de validação.
+     * 
+     * @return array
+     */
+    protected function messages()
+    {
+        return [
+            'titulo.required' => 'O campo título é obrigatório.',
+            'titulo.string' => 'O título deve ser um texto válido.',
+            'titulo.max' => 'O título não pode ter mais de 100 caracteres.',
+            'descricao.required' => 'O campo descrição é obrigatório.',
+            'descricao.string' => 'A descrição deve ser um texto válido.',
+            'categoria_id.required' => 'Você deve selecionar uma categoria.',
+        ];
+    }
 
     /**
      * Reseta os campos do formulário.
@@ -63,6 +107,8 @@ class Modal extends Component
         $this->tarefaId = null;
         $this->titulo = '';
         $this->descricao = '';
+        $this->categoria_id = '';
+        $this->prioridade = '';
     }
 
     /**
@@ -90,6 +136,8 @@ class Modal extends Component
         $this->tarefaId = $tarefa->id;
         $this->titulo = $tarefa->titulo;
         $this->descricao = $tarefa->descricao;
+        $this->categoria_id = $tarefa->categoria_id;
+        $this->prioridade = $tarefa->prioridade;
         $this->openModal();
     }
 
@@ -102,6 +150,7 @@ class Modal extends Component
      */
     public function save()
     {
+        $this->user_id = Auth::user()->id;
         $this->validate();
         $this->closeModal();
         if ($this->tarefaId) {
@@ -110,6 +159,9 @@ class Modal extends Component
             $tarefa->update([
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
+                'categoria_id' => $this->categoria_id,
+                'prioridade' => $this->prioridade ? $this->prioridade : 'MEDIA',
+                'user_id' => $this->user_id,
             ]);
             $message = 'Tarefa atualizada com sucesso.';
            
@@ -118,7 +170,9 @@ class Modal extends Component
             Tarefa::create([
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
-                'status' => "PENDENTE",
+                'categoria_id' => $this->categoria_id,
+                'prioridade' => $this->prioridade ? $this->prioridade : 'MEDIA',
+                'user_id' => $this->user_id,
             ]);
             $message = 'Tarefa criada com sucesso.';
         }
@@ -153,7 +207,7 @@ class Modal extends Component
      */
     public function render()
     {
-        return view('livewire.modal');
+        return view('livewire.modal', ["categorias" => $this->categorias]);
     }
 }
 

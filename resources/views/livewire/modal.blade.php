@@ -12,31 +12,49 @@
                                 Criar Tarefa
                             @endif
                         </h5>
-                        <button type="button" class="close" wire:click="closeModal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div wire:click="closeModal" class="modal-close-button"><i class="fa-solid fa-xmark"></i></div>
                     </div>
                     <div class="modal-body">
                         <!-- Formulário -->
                         <form wire:submit.prevent="save">
                             <div class="form-group">
-                                <label for="titulo">Título</label>
+                                <label class="mb-2" for="titulo">Título</label>
                                 <input type="text" id="titulo" wire:model="titulo" class="form-control" />
                                 @error('titulo') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
 
-                            <div class="form-group">
-                                <label for="descricao">Descrição</label>
+                            <div class="form-group mt-2">
+                                <label class="mb-2" for="descricao">Descrição</label>
                                 <textarea id="descricao" wire:model="descricao" class="form-control"></textarea>
                                 @error('descricao') <small class="text-danger">{{ $message }}</small> @enderror
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label class="mb-2" for="categoria_id">Categoria</label>
+                                <select class="form-select" wire:model="categoria_id" id="categoria_id">
+                                    <option value="" disabled selected>Selecione uma categoria</option>
+                                    @foreach ($categorias as $categoria)
+                                        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                                    @endforeach
+                                </select>
+                                @error('categoria_id') <small class="text-danger">{{ $message }}</small> @enderror
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label class="mb-2" for="prioridade">Prioridade</label>
+                                <select class="form-select" wire:model="prioridade" id="prioridade">
+                                    <option value="" disabled selected>Selecione a prioridade</option>
+                                    <option value="ALTA">ALTA</option>
+                                    <option value="MEDIA">MÉDIA</option>
+                                    <option value="BAIXA">BAIXA</option>
+                                </select>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" wire:click="closeModal">Cancelar</button>
                         <button type="submit" class="btn btn-primary" wire:click="save">
                             @if($tarefaId)
-                                Atualizar
+                                Salvar
                             @else
                                 Criar
                             @endif

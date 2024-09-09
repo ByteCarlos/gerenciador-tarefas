@@ -10,7 +10,13 @@ main {
     height: auto;
 }
 
-main .title {
-    font-size: 18px;
+.users-example {
+    width: 100%;
+    justify-content: space-around;
 }
 
+.users-example div {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 5px solid #0D6EFD
+}
