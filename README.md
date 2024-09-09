@@ -1,10 +1,10 @@
-# Sistema de Gerenciamento de Tarefas
+# Sistema de Gerenciamento de Tarefas :wrench:
 
-### Descrição
+## Descrição :page_facing_up:
 
 Este projeto inclui a implementação do sistema de gerenciamento de tarefas conforme o desafio proposto. O sistema permite que os usuários criem, visualizem, editem e excluam tarefas utilizando HTML para o front-end, PHP e Laravel para o back-end, e MySQL para o banco de dados.
 
-## Funcionalidades Implementadas
+## Funcionalidades Implementadas :pencil2:
 
 1. **Listar Tarefas**: Implementada a exibição de todas as tarefas cadastradas.
 2. **Adicionar Tarefa**: Funcionalidade para adicionar novas tarefas ao sistema.
@@ -27,25 +27,25 @@ Este projeto inclui a implementação do sistema de gerenciamento de tarefas con
 ### Banco de Dados (MySQL)
 - **Estrutura da Tabela**: Tabela `tarefas` com os campos necessários (`id`, `titulo`, `descricao`, `status`, `categoria_id`, `prioridade`, `user_id`, `created_at`, `updated_at`).
 
-## Estrutura do Projeto
+## Estrutura do Projeto :chart_with_upwards_trend:
 
 - **/resources/views/**: Arquivos Blade para as páginas HTML.
 - **/app/Http/Controllers/**: Com a lógica de controle.
 - **/database/migrations**: Migration para criação da tabela `tarefas`.
 
-## Instruções de Instalação
+## Instruções de Instalação :zap:
 
 1. **Clone o Repositório**:
    ```bash
    git clone https://github.com/ByteCarlos/gerenciador-tarefas
    ```
 
-2. **Instale as dependências:
+2. **Instale as dependências**:
    ```bash
    composer install
    ```
 
-3. **Configuração do Banco de Dados:**
+3. **Configuração do Banco de Dados**: :lock:
 - Crie um banco de dados no MySQL.
 - Execute as migrations:
   ```bash
@@ -70,7 +70,7 @@ Este projeto inclui a implementação do sistema de gerenciamento de tarefas con
    - Commits:
    Commits frequentes e descritivos foram realizados durante o desenvolvimento.
 
-## Repositório no GitHub**:
+## Repositório no GitHub:
    - O projeto foi entregue em um repositório público no GitHub.
 
 ## Prazo de Entrega:
@@ -93,6 +93,9 @@ Este projeto inclui a implementação do sistema de gerenciamento de tarefas con
 - Categorias de tarefas.
 - Autenticação de usuários para gerenciamento de tarefas pessoais.
 
-## Obrigado pela consideração! 😊
+## Obrigado pela consideração! :technologist:
+
+## Sigam-me no Linkedin :arrow_down:
+https://www.linkedin.com/in/carlos-henrique-santos-silveira-24abb1292/
 
 ### Atenciosamente, Carlos
