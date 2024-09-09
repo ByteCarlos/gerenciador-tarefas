@@ -4,7 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TarefaController;
 
-Route::get('/', [TarefaController::class, 'index'])->name('tarefas.index');
+use App\Http\Controllers\LoginController;
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/', [LoginController::class, 'index'])->name('login.index');
+
+Route::get('/tarefas', [TarefaController::class, 'index'])->name('tarefas.index');
 
 // Exibe o formulário para criar uma nova tarefa
 Route::get('/tarefas/create', [TarefaController::class, 'create'])->name('tarefas.create');

@@ -7,19 +7,22 @@ use App\Models\Tarefa;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class TarefaController extends Controller
 {
     
     public function index() : View
     {   
-        $tarefas = Tarefa::orderByRaw("
-            FIELD(prioridade, 'ALTA', 'MEDIA', 'BAIXA') ASC
-        ")->get();
+        $user = Auth::user();
+
+        $tarefas = Tarefa::where('user_id', $user->id)
+            ->orderByRaw("FIELD(prioridade, 'ALTA', 'MEDIA', 'BAIXA') ASC")
+            ->get();
 
         $categorias = Categoria::all();
 
-        return view('tarefas.index', compact('tarefas', 'categorias'));
+        return view('tarefas.index', compact('tarefas', 'categorias', 'user'));
     }
 
     public function create() : View

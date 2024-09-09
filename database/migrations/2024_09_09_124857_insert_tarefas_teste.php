@@ -10,43 +10,35 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $categoriaTrabalho = DB::table('categorias')->where('nome', 'Trabalho')->first();
-        $categoriaEstudos = DB::table('categorias')->where('nome', 'Estudos')->first();
-
+        // Inserir tarefas de teste para cada usuário
         DB::table('tarefas')->insert([
             [
-                'titulo' => 'Finalizar relatório',
-                'descricao' => 'Concluir o relatório mensal de desempenho.',
+                'titulo' => 'Tarefa 1 - Usuário 1',
+                'descricao' => 'Esta é uma tarefa de exemplo para o Usuário Teste 1.',
                 'status' => 'PENDENTE',
-                'categoria_id' => $categoriaTrabalho->id,
+                'categoria_id' => 1, // Suponha que a categoria 1 já exista
                 'prioridade' => 'ALTA',
+                'user_id' => 1, // Associando ao Usuário Teste 1
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'titulo' => 'Estudar para prova',
-                'descricao' => 'Revisar o conteúdo de matemática para a prova de sexta-feira.',
-                'status' => 'PENDENTE',
-                'categoria_id' => $categoriaEstudos->id,
-                'prioridade' => 'MEDIA',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'titulo' => 'Fazer teste para entrevista',
-                'descricao' => 'Revisar o conteúdo do laravel e livewire.',
-                'status' => 'PENDENTE',
-                'categoria_id' => $categoriaTrabalho->id,
-                'prioridade' => 'BAIXA',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'titulo' => 'Reunião com cliente',
-                'descricao' => 'Reunião de planejamento com o cliente XYZ.',
+                'titulo' => 'Tarefa 2 - Usuário 2',
+                'descricao' => 'Esta é uma tarefa de exemplo para o Usuário Teste 2.',
                 'status' => 'CONCLUIDA',
-                'categoria_id' => $categoriaTrabalho->id,
-                'prioridade' => 'ALTA',
+                'categoria_id' => 2, // Suponha que a categoria 2 já exista
+                'prioridade' => 'MEDIA',
+                'user_id' => 2, // Associando ao Usuário Teste 2
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'titulo' => 'Tarefa 3 - Usuário 3',
+                'descricao' => 'Esta é uma tarefa de exemplo para o Usuário Teste 3.',
+                'status' => 'PENDENTE',
+                'categoria_id' => 3, // Suponha que a categoria 3 já exista
+                'prioridade' => 'BAIXA',
+                'user_id' => 3, // Associando ao Usuário Teste 3
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -58,6 +50,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::table('tarefas')->whereIn('titulo', ['Finalizar relatório', 'Estudar para prova', 'Reunião com cliente'])->delete();
+        // Deletar as tarefas de teste se a migration for revertida
+        DB::table('tarefas')->whereIn('user_id', [1, 2, 3])->delete();
     }
 };

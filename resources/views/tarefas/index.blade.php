@@ -15,14 +15,28 @@
     @livewireStyles
 </head>
 <body>
-    <header>
-        <div class="title">Minhas Tarefas</div>
-        <livewire:header />
-    </header>
-    <main>
-        <livewire:alert />
-        <livewire:list-tasks :tarefas="$tarefas" :categorias="$categorias"/>
-    </main>
+    @if(Auth::check())
+        <header>
+            <div class="title">Bem-vindo {{$user->name}} 😊</div>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="btn btn-danger">Sair</button>
+            </form>
+            <livewire:header />
+        </header>
+        <main>
+            <livewire:alert />
+            <livewire:list-tasks :tarefas="$tarefas" :categorias="$categorias"/>
+        </main>
+    @else
+        <header>
+            <div class="title">Bem-vindo ao seu gerenciador de tarefas 😊</div>
+        </header>
+        <main>
+            <livewire:login />
+        </main>
+    @endif
+    
     <footer>
         <livewire:footer />
     </footer>
