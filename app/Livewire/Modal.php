@@ -53,6 +53,13 @@ class Modal extends Component
     public $categoria_id;
 
     /**
+     * Prioridade da tarefa ['ALTA', 'MEDIA', 'BAIXA'].
+     * 
+     * @var string
+     */
+    public $prioridade;
+
+    /**
      * Regras de validação do formulário.
      * 
      * @var array
@@ -75,6 +82,7 @@ class Modal extends Component
         $this->titulo = '';
         $this->descricao = '';
         $this->categoria_id = '';
+        $this->prioridade = '';
     }
 
     /**
@@ -103,6 +111,7 @@ class Modal extends Component
         $this->titulo = $tarefa->titulo;
         $this->descricao = $tarefa->descricao;
         $this->categoria_id = $tarefa->categoria_id;
+        $this->prioridade = $tarefa->prioridade;
         $this->openModal();
     }
 
@@ -124,6 +133,7 @@ class Modal extends Component
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
                 'categoria_id' => $this->categoria_id,
+                'prioridade' => $this->prioridade,
             ]);
             $message = 'Tarefa atualizada com sucesso.';
            
@@ -133,6 +143,7 @@ class Modal extends Component
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
                 'categoria_id' => $this->categoria_id,
+                'prioridade' => $this->prioridade,
             ]);
             $message = 'Tarefa criada com sucesso.';
         }

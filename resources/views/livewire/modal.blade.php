@@ -32,10 +32,20 @@
                             <div class="form-group">
                                 <label for="categoria_id">Categoria</label>
                                 <select class="form-select" wire:model="categoria_id" id="categoria_id">
-                                    <option value="" disabled>Selecione uma categoria</option>
+                                    <option value="" disabled selected>Selecione uma categoria</option>
                                     @foreach ($categorias as $categoria)
                                         <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
                                     @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prioridade">Prioridade</label>
+                                <select class="form-select" wire:model="prioridade" id="prioridade">
+                                    <option value="" disabled selected>Selecione a prioridade</option>
+                                    <option value="ALTA">ALTA</option>
+                                    <option value="MEDIA">MÉDIA</option>
+                                    <option value="BAIXA">BAIXA</option>
                                 </select>
                             </div>
                         </form>

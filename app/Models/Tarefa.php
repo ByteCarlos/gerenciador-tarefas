@@ -12,6 +12,7 @@ class Tarefa extends Model
         "titulo",
         "descricao",
         "categoria_id",
+        "prioridade",
     ];
 
     use HasFactory;
