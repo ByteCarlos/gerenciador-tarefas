@@ -12,9 +12,7 @@
                                 Criar Tarefa
                             @endif
                         </h5>
-                        <button type="button" class="close" wire:click="closeModal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div wire:click="closeModal" class="modal-close-button"><i class="fa-solid fa-xmark"></i></div>
                     </div>
                     <div class="modal-body">
                         <!-- Formulário -->
@@ -33,10 +31,9 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" wire:click="closeModal">Cancelar</button>
                         <button type="submit" class="btn btn-primary" wire:click="save">
                             @if($tarefaId)
-                                Atualizar
+                                Salvar
                             @else
                                 Criar
                             @endif
