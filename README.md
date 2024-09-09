@@ -1,6 +1,8 @@
-# Pull Request para Sistema de Gerenciamento de Tarefas
+# Sistema de Gerenciamento de Tarefas
 
-## Descrição
+Este projeto faz parte de um processo seletivo para um desenvolvedor web iniciante. O objetivo é criar um sistema básico de gerenciamento de tarefas utilizando as tecnologias HTML, PHP e MySQL, integrado ao framework Laravel.
+
+### Descrição
 
 Este pull request inclui a implementação do sistema de gerenciamento de tarefas conforme o desafio proposto. O sistema permite que os usuários criem, visualizem, editem e excluam tarefas utilizando HTML para o front-end, PHP e Laravel para o back-end, e MySQL para o banco de dados.
 
@@ -12,7 +14,7 @@ Este pull request inclui a implementação do sistema de gerenciamento de tarefa
 4. **Marcar como Concluída**: Permite a mudança do status da tarefa para concluída.
 5. **Excluir Tarefa**: Implementada a funcionalidade para excluir tarefas.
 
-## Requisitos Técnicos
+## Requisitos Técnicos (CUMPRIDOS)
 
 ### Front-end (HTML/CSS)
 - **Listagem de Tarefas**: Exibição das tarefas em uma interface simples.
@@ -25,51 +27,69 @@ Este pull request inclui a implementação do sistema de gerenciamento de tarefa
 - **Boas Práticas**: Código organizado e seguindo boas práticas de desenvolvimento.
 
 ### Banco de Dados (MySQL)
-- **Estrutura da Tabela**: Tabela `tarefas` com os campos necessários (`id`, `titulo`, `descricao`, `status`, `created_at`, `updated_at`).
+- **Estrutura da Tabela**: Tabela `tarefas` com os campos necessários (`id`, `titulo`, `descricao`, `status`, `categoria_id`, `prioridade`, `user_id`, `created_at`, `updated_at`).
 
 ## Estrutura do Projeto
 
 - **/resources/views/**: Arquivos Blade para as páginas HTML.
-- **/app/Http/Controllers/**: `TarefaController` com a lógica de controle.
+- **/app/Http/Controllers/**: Com a lógica de controle.
 - **/database/migrations**: Migration para criação da tabela `tarefas`.
 
 ## Instruções de Instalação
 
 1. **Clone o Repositório**:
-   ```git clone https://github.com/seu-usuario/seu-repositorio.git```
+   ```bash
+   git clone https://github.com/ByteCarlos/gerenciador-tarefas
+   ```
 
-2. **Configuração do Banco de Dados**:
-   - Crie um banco de dados no MySQL.
-   - Execute as migrations para criar a tabela tarefas.
+2. **Instale as dependências:
+   ```bash
+   composer install
+   ```
 
-3. **Configuração do Projeto**:
-   - Atualize o arquivo .env com as credenciais do seu banco de dados.
+3. **Configuração do Banco de Dados:**
+- Crie um banco de dados no MySQL.
+- Execute as migrations:
+  ```bash
+   php artisan migrate
+   ```
 
-4. **Execução**:
-   - Acesse a aplicação no endereço configurado no seu ambiente local, por exemplo: http://localhost/gerenciador-tarefas.
+4. **Configuração do Projeto:**
+- Atualize o arquivo `.env` com as credenciais do seu banco de dados.
 
-5. **Requisitos de Entrega**
+5. **Execução:**
+- Gere uma nova ``APP_KEY`` para a aplicação:
+  ```bash
+   php artisan key:generate
+   ```
+- Execute a aplicação:
+```bash
+   php artisan serve
+   ```
+- Acesse a aplicação via navegador no endereço configurado no seu ambiente local, por exemplo: http://localhost/gerenciador-tarefas/.
+
+## Requisitos de Entrega
    - Commits:
    Commits frequentes e descritivos foram realizados durante o desenvolvimento.
 
-6. **Repositório no GitHub**:
+## Repositório no GitHub**:
    - O projeto foi entregue em um repositório público no GitHub.
 
-7. **Prazo de Entrega**:
+## Prazo de Entrega:
    - O desafio foi concluído e enviado dentro do prazo de 4 dias corridos.
 
-8. **Critérios de Avaliação**
+## Critérios de Avaliação
 - Organização e Estrutura do Código: Código organizado e claro.
 - Funcionalidade: O sistema atende a todos os requisitos funcionais.
 - Validações: Entrada de dados é tratada adequadamente.
 - Uso do Git: Commits frequentes e bem descritos.
 
-9. **Bônus**
+## Bônus
 - Utilização de Plugins CSS: Utilizei Bootstrap 5 para melhorar o design da interface.
 - jQuery: Implementado para manipulação simples do DOM.
 - Laravel Livewire: Adicionada interatividade com Laravel Livewire para uma experiência de usuário mais dinâmica.
 
-10. **Adicionalmente, foram implementadas as seguintes funcionalidades**:
+## Adicionalmente, foram implementadas as seguintes funcionalidades
 - Filtros e busca nas tarefas.
 - Funcionalidade de tarefas prioritárias.
 - Categorias de tarefas.
