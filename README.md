@@ -14,7 +14,7 @@ Este pull request inclui a implementação do sistema de gerenciamento de tarefa
 4. **Marcar como Concluída**: Permite a mudança do status da tarefa para concluída.
 5. **Excluir Tarefa**: Implementada a funcionalidade para excluir tarefas.
 
-## Requisitos Técnicos
+## Requisitos Técnicos (CUMPRIDOS)
 
 ### Front-end (HTML/CSS)
 - **Listagem de Tarefas**: Exibição das tarefas em uma interface simples.
@@ -27,7 +27,7 @@ Este pull request inclui a implementação do sistema de gerenciamento de tarefa
 - **Boas Práticas**: Código organizado e seguindo boas práticas de desenvolvimento.
 
 ### Banco de Dados (MySQL)
-- **Estrutura da Tabela**: Tabela `tarefas` com os campos necessários (`id`, `titulo`, `descricao`, `status`, `created_at`, `updated_at`).
+- **Estrutura da Tabela**: Tabela `tarefas` com os campos necessários (`id`, `titulo`, `descricao`, `status`, `categoria_id`, `prioridade`, `user_id`, `created_at`, `updated_at`).
 
 ## Estrutura do Projeto
 
