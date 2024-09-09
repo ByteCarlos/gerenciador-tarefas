@@ -8,6 +8,11 @@ use Carbon\Carbon;
 
 class Tarefa extends Model
 {
+    public $fillable = [
+        "titulo",
+        "descricao",
+    ];
+
     use HasFactory;
 
     public function categoria()

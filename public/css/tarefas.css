@@ -15,13 +15,13 @@ main .list-tasks-container table td i {
 main .list-tasks-container table .actions-buttons {
     display: inline-flex;
     width: 100%;
-    padding: 15px 0px;
+    padding: 15px 10px;
     justify-content: center;
     gap: 10px;
 }
 
 main .list-tasks-container table .actions-buttons .btn i {
-    margin-right: 5px;
+    margin: 0;
 }
 
 main .list-tasks-container table .high-priority i {

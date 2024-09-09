@@ -1,6 +1,6 @@
 <div class="list-tasks-container">
     <livewire:modal />
-    <div class="container mt-4">
+    <div class="container mt-0 mb-4" style="margin-left: 0">
         <div class="row">
             <div class="col-md-2">
                 <h5>Prioridade</h5>
@@ -85,11 +85,11 @@
                 </td>
                 <td class="actions-buttons">
                     <button wire:click="editTarefa({{ $tarefa->id }})" class="btn btn-primary">
-                        <i class="fa-solid fa-pen-to-square"></i>Editar</button>
+                        <i class="fa-solid fa-pen-to-square"></i></button>
                     <button wire:click="excluirTarefa({{ $tarefa->id }})" class="btn btn-danger">
-                        <i class="fa-solid fa-trash"></i>Excluir</button>
+                        <i class="fa-solid fa-trash"></i></button>
                     <button wire:click="concluirTarefa({{ $tarefa->id }})" class="btn btn-success">
-                        <i class="fa-solid fa-check"></i>Concluir</button>
+                        <i class="fa-solid fa-check"></i></button>
                 </td>
             </tr>
             @endforeach
