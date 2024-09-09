@@ -24,6 +24,9 @@ O sistema permitirá que os usuários criem, visualizem, editem e excluam tarefa
   - `titulo`: Título da tarefa
   - `descricao`: Descrição da tarefa
   - `status`: Status da tarefa (`pendente` ou `concluída`)
+  - `categoria_id`: ID da categoria da tarefa
+  - `prioridade`: Prioridade da tarefa (`ALTA`, `MEDIA` ou `BAIXA`)
+  - `user_id`: ID do usuário a quem a tarefa pertence
   - `created_at`: Data de criação
   - `updated_at`: Data de atualização
 
@@ -45,53 +48,27 @@ O sistema permitirá que os usuários criem, visualizem, editem e excluam tarefa
 
 1. **Clone o Repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/ByteCarlos/gerenciador-tarefas
    ```
-2. **Configuração do Banco de Dados:**
-- Crie um banco de dados no MySQL.
-- Execute as migrations. Edite a migration que cria a tabela de tarefas para adicionar os campos necessários ou crie uma para adicionálos posteriormente.
 
-3. **Configuração do Projeto:**
+2. **Instale as dependências:
+   ```bash
+   composer install
+   ```
+
+3. **Configuração do Banco de Dados:**
+- Crie um banco de dados no MySQL.
+- Execute as migrations:
+  ```bash
+   php artisan migrate
+   ```
+
+4. **Configuração do Projeto:**
 - Atualize o arquivo `.env` as credenciais do seu banco de dados.
 
-4. **Execução:**
-- Acesse a aplicação via navegador no endereço configurado no seu ambiente local, por exemplo: `http://localhost/seu-projeto`.
-
-## Requisitos de Entrega
-
-1. **Commits:**
-- O candidato deve realizar commits frequentes durante o desenvolvimento do projeto, com mensagens descritivas que indiquem as alterações realizadas.
-
-2. **Repositório no GitHub:**
-- O projeto deve ser entregue em um repositório público no GitHub.
-- O link do repositório deve ser enviado para avaliação.
-
-3. **Prazo de Entrega:**
-- O candidato deverá concluir e enviar o desafio em até 4 dias corridos, contados a partir do seu recebimento.
-
-## Critérios de Avaliação: 
-- **Organização e Estrutura do Código:** Boa organização dos arquivos e clareza no código.
-- **Funcionalidade:** O sistema deve atender a todos os requisitos funcionais especificados.
-- **Validações:** O sistema deve lidar corretamente com entradas inválidas ou inesperadas.
-- **Uso do Git:** Frequência e qualidade dos commits no repositório.
-
-## Bônus
-
-Você pode se destacar no processo seletivo ao implementar funcionalidades adicionais e utilizar ferramentas que melhorem a interface e a usabilidade do sistema. Aqui estão algumas sugestões:
-
-1. **Utilização de Plugins CSS**: 
-   - Implementar o design do sistema utilizando frameworks CSS como Bootstrap 4 ou 5.
-
-2. **jQuery**:
-   - Utilizar jQuery para adicionar interatividade e manipulação de DOM de forma simples e eficiente.
-
-3. **Laravel Livewire**:
-   - Implementar interatividade no sistema utilizando Laravel Livewire, tornando a aplicação mais dinâmica sem a necessidade de muito JavaScript.
-
-4. **Funcionalidades Adicionais**:
-   - Implementar filtros ou buscas nas tarefas.
-   - Adicionar uma funcionalidade de "tarefas prioritárias".
-   - Criar uma funcionalidade de categorias de tarefas.
-   - Implementar autenticação para permitir que diferentes usuários gerenciem suas próprias tarefas.
-
-Essas adições não são obrigatórias, entretando demonstrarão habilidades extras e iniciativa, o que será valorizado durante a avaliação.
+5. **Execução:**
+- Execute a aplicação:
+```bash
+   php artisan serve
+   ```
+- Acesse a aplicação via navegador no endereço configurado no seu ambiente local, por exemplo: `http://localhost/gerenciador-tarefas/`.
