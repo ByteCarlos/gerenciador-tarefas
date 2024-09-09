@@ -88,8 +88,11 @@
                         <i class="fa-solid fa-pen-to-square"></i></button>
                     <button wire:click="excluirTarefa({{ $tarefa->id }})" class="btn btn-danger">
                         <i class="fa-solid fa-trash"></i></button>
+                    @if ($tarefa->status == "PENDENTE")
                     <button wire:click="concluirTarefa({{ $tarefa->id }})" class="btn btn-success">
                         <i class="fa-solid fa-check"></i></button>
+                    @endif
+                    
                 </td>
             </tr>
             @endforeach
