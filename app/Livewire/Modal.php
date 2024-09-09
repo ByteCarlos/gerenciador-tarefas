@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Attributes\On; 
 use App\Models\Tarefa;
@@ -60,6 +61,13 @@ class Modal extends Component
     public $prioridade;
 
     /**
+     * FK de usuário para tarefa.
+     * 
+     * @var int
+     */
+    public $user_id;
+
+    /**
      * Regras de validação do formulário.
      * 
      * @var array
@@ -68,6 +76,7 @@ class Modal extends Component
         'titulo' => 'required|string|max:100',
         'descricao' => 'required|string',
         'categoria_id' => 'required',
+        'user_id' => 'required',
     ];
 
     /**
@@ -141,6 +150,7 @@ class Modal extends Component
      */
     public function save()
     {
+        $this->user_id = Auth::user()->id;
         $this->validate();
         $this->closeModal();
         if ($this->tarefaId) {
@@ -150,7 +160,8 @@ class Modal extends Component
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
                 'categoria_id' => $this->categoria_id,
-                'prioridade' => $this->prioridade,
+                'prioridade' => $this->prioridade ? $this->prioridade : 'MEDIA',
+                'user_id' => $this->user_id,
             ]);
             $message = 'Tarefa atualizada com sucesso.';
            
@@ -160,7 +171,8 @@ class Modal extends Component
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
                 'categoria_id' => $this->categoria_id,
-                'prioridade' => $this->prioridade,
+                'prioridade' => $this->prioridade ? $this->prioridade : 'MEDIA',
+                'user_id' => $this->user_id,
             ]);
             $message = 'Tarefa criada com sucesso.';
         }

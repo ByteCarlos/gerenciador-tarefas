@@ -30,4 +30,17 @@
             </div>
         </div>
     </div>
+    <div class="users-example">
+        <h4>Usuário Teste 1</h4>
+        <p>E-mail: teste1@example.com</p>
+        <p>Senha: password123</p>
+
+        <h4>Usuário Teste 2</h4>
+        <p>E-mail: teste2@example.com</p>
+        <p>Senha: password123</p>
+
+        <h4>Usuário Teste 3</h4>
+        <p>E-mail: teste3@example.com</p>
+        <p>Senha: password123</p>
+    </div>
 </div>

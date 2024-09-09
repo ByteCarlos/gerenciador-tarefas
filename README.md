@@ -1,16 +1,3 @@
-Usuário Teste 1
-
-E-mail: teste1@example.com
-Senha: password123
-Usuário Teste 2
-
-E-mail: teste2@example.com
-Senha: password123
-Usuário Teste 3
-
-E-mail: teste3@example.com
-Senha: password123
-
 # Sistema de Gerenciamento de Tarefas
 
 Este projeto faz parte de um processo seletivo para um desenvolvedor web iniciante. O objetivo é criar um sistema básico de gerenciamento de tarefas utilizando as tecnologias HTML, PHP e MySQL, integrado ao framework Laravel.
