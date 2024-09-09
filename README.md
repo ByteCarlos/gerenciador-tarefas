@@ -64,9 +64,13 @@ O sistema permitirá que os usuários criem, visualizem, editem e excluam tarefa
    ```
 
 4. **Configuração do Projeto:**
-- Atualize o arquivo `.env` as credenciais do seu banco de dados.
+- Atualize o arquivo `.env` com as credenciais do seu banco de dados.
 
 5. **Execução:**
+- Gere uma nova ``APP_KEY`` para a aplicação:
+  ```bash
+   php artisan key:generate
+   ```
 - Execute a aplicação:
 ```bash
    php artisan serve
