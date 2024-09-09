@@ -5,7 +5,6 @@ namespace App\Livewire;
 use App\Models\Tarefa;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
-use Livewire\Features\SupportEvents\Event;
 use Livewire\Component;
 
 class ListTasks extends Component
@@ -19,7 +18,7 @@ class ListTasks extends Component
      * @param $tarefaId ID da tarefa a ser atualizada
      * @return void
      */
-    public function editTarefa(int $tarefaId)
+    public function editTarefa($tarefaId)
     {
         $tarefa = Tarefa::find($tarefaId);
 
@@ -32,7 +31,7 @@ class ListTasks extends Component
      * @param $tarefaId ID da tarefa a ser concluída
      * @return RedirectResponse
      */
-    public function concluirTarefa(int $tarefaId)
+    public function concluirTarefa($tarefaId)
     {
         $tarefa = Tarefa::find($tarefaId);
         $tarefa->status = "CONCLUIDA";
@@ -50,7 +49,7 @@ class ListTasks extends Component
      * @param $tarefaId ID da tarefa a ser excluída
      * @return RedirectResponse
      */
-    public function excluirTarefa(int $tarefaId)
+    public function excluirTarefa($tarefaId)
     {
         $tarefa = Tarefa::find($tarefaId);
 

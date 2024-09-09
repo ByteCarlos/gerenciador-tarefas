@@ -9,7 +9,6 @@
         <img src="{{ asset('images/livewire-logo.png') }}" alt="Livewire" class="footer-logo mx-2">
         <img src="{{ asset('images/bootstrap-logo.png') }}" alt="Bootstrap" class="footer-logo mx-2">
         <img src="{{ asset('images/jquery-logo.png') }}" alt="jQuery" class="footer-logo mx-2">
-        <img src="{{ asset('images/datatable-logo.jpeg') }}" alt="DataTables" class="footer-logo mx-2">
         <img src="{{ asset('images/mysql-logo.png') }}" alt="MySQL" class="footer-logo mx-2">
     </div>
 </div>
